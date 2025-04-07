@@ -23,7 +23,7 @@ namespace KarnesDevelopment
         void Start()
         {
             m_gameManager = FindFirstObjectByType<GameManager>();
-            for (int i = 0; i <= slots.Length - 1; i++)
+            for (int i = 0; i < slots.Length; i++)
             {
                 int randomIndex = Random.Range(0, slotsImages.Length);
 
@@ -37,7 +37,7 @@ namespace KarnesDevelopment
         public void Spin()
         {
             m_finishedSpins = 0;
-            for (int i = 0; i <= slots.Length - 1; i++)
+            for (int i = 0; i < slots.Length; i++)
             {
                 StartCoroutine(SpinSlot(slots[i]));
 
@@ -53,7 +53,7 @@ namespace KarnesDevelopment
         {
             for (int i = 0; i < spinsPerTile; i++)
             {
-                int randomIndex = Random.Range(0, slotsImages.Length - 1);
+                int randomIndex = Random.Range(0, slotsImages.Length);
                 slot.GetComponentsInChildren<Slot>()[0].slotImage.sprite = slotsImages[randomIndex];
                 yield return new WaitForSeconds(delayBetweenSpins);
             }
