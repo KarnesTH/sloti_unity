@@ -12,12 +12,26 @@ namespace KarnesDevelopment
         public TextMeshProUGUI gameLabel;
         [Header("Bet Variables")]
         public TextMeshProUGUI betValue;
+        [Header("Bonus Variables")]
+        public int bonusSevenValue;
+        public int bonusCherryValue;
+        public int bonusBellValue;
+        public int bonusBarValue;
+        public TextMeshProUGUI bonusSevenLbl;
+        public TextMeshProUGUI bonusCherryLbl;
+        public TextMeshProUGUI bonusBellLbl;
+        public TextMeshProUGUI bonusBarLbl;
 
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             moneyLabel.text = $"${moneyValue}";
+            bonusSevenLbl.text = "JACKPOT";
+            bonusCherryLbl.text = $"+ {bonusCherryValue}";
+            bonusBellLbl.text = $"+ {bonusBellValue}";
+            bonusBarLbl.text = $"+ {bonusBarValue}";
+            gameLabel.text = "";
 
         }
 
@@ -25,6 +39,11 @@ namespace KarnesDevelopment
         void Update()
         {
 
+        }
+
+        public void CheckWin()
+        {
+            Debug.Log("CheckWin called");
         }
     }
 }
